@@ -24,3 +24,16 @@ let n="23";
 let numbers=Number(n)
 console.log(numbers)
 console.log(typeof numbers);
+console.log(null==null)
+console.log(32=="32")
+console.log(2==2)
+console.log("02">1) //true
+console.log("22"===22) // this checks all the values and type also
+console.log(null>0) //false
+console.log(null==0); //false
+console.log(null>=0);
+console.log(undefined>0) //false
+console.log(undefined>=0); //false
+console.log(undefined<0);//false
+
+
