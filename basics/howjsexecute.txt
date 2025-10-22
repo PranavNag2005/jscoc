@@ -1,0 +1,64 @@
+JavaScript executes code using an execution context and a call stack. The call stack follows a Last-In-First-Out (LIFO) model to manage function calls and ensure orderly execution.
+
+ Execution Context: The Environment for Code
+JavaScript runs in three types of execution contexts:
+- Global Execution Context
+- Created when the script starts.
+- Sets up the global this and global variables.
+- Function Execution Context
+- Created every time a function is invoked.
+- Has its own scope, variables, and this binding.
+- Eval Execution Context
+- Rarely used; created when eval() is called.
+Each context contains:
+- Variable Environment (variables, functions)
+- Lexical Environment (scope chain)
+- this binding
+📦 Call Stack: The Execution Order Manager
+The call stack is a data structure that tracks function calls:
+- When a function is called, its execution context is pushed onto the stack.
+- When the function finishes, its context is popped off the stack.
+🔁 Example:
+function greet() {
+  console.log("Hello");
+}
+
+function start() {
+  greet();
+}
+
+start();
+
+
+Call Stack Flow:
+- start() is called → pushed onto stack.
+- Inside start(), greet() is called → pushed.
+- greet() logs "Hello" → finishes → popped.
+- start() finishes → popped.
+- Stack is empty again.
+
+🔄 How JS Handles Async Code
+JavaScript is single-threaded, but it handles asynchronous tasks using:
+- Web APIs (e.g., setTimeout, fetch)
+- Callback Queue
+- Event Loop
+Async functions are offloaded, and their callbacks are queued to run after the call stack is clear.
+console.log("A");
+
+setTimeout(() => console.log("B"), 0);
+
+console.log("C");
+
+// Output: A → C → B
+
+
+Even with 0ms, B waits until the stack is empty.
+
+🧪 Debugging Tip
+Use browser DevTools to view the call stack in real time when debugging — especially helpful for tracing nested or recursive calls.
+
+Sources:
+- JavaScript Call Stack Tutorial
+- GeeksforGeeks: What is the Call Stack in JavaScript
+- DEV: How JavaScript Executes Code
+Want to see how this works with recursion, closures, or async/await?
