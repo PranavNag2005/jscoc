@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: white;">
+    <ul class="language">
+        <li>Java Script</li>
+    </ul>
+</body>
+    <script>
+        function addlanguage(lang){
+            console.log(lang);
+            
+            const item=document.createElement('li')
+            item.innerHTML=`${lang}`
+            const classs=document.querySelector(".language").appendChild(item)
+        }
+        addlanguage("python")
+        addlanguage('java')
+        function optimizedapproach(lang){
+            const item=document.createElement('li')
+            item.appendChild(document.createTextNode(lang))
+            document.querySelector(".language").appendChild(item)
+        }
+        optimizedapproach("sql")
+        function addprojecttitle(title){
+            const item=document.createElement('li')
+            item.appendChild(document.createTextNode(title))
+            document.querySelector(".language").appendChild(item)
+        }
+        addprojecttitle("hackx")
+
+        //editing the elements
+        const secondlang=document.querySelector("li:nth-child(2)")
+        console.log(secondlang);
+        const newli=document.createElement("li")
+        newli.textContent="abcde"
+        secondlang.replaceWith(newli)
+        //edit
+        const first=document.querySelector("li:first-child")
+        first.outerHTML="<li>spring boot</li>"
+        
+        //removing the elements
+
+        const last=document.querySelector("li:last-child")
+        last.remove()
+    </script>
+
+</html>
