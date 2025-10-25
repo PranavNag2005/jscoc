@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: antiquewhite;
+      display: flex;
+    }
+
+    a {
+      text-decoration: none;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+    }
+
+    .main {
+      width: 80%;
+      margin: 100px auto;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px; /* space between color boxes */
+      margin-top: 30px;
+    }
+
+    .colors {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 150px;
+      width: 150px;
+      font-weight: bold;
+      color: black;
+      border: 2px solid #ccc;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="main">
+    <h1>Welcome to Color Picker</h1>
+    <p>Click on colors to get background changed</p>
+    <div class="buttons">
+      <span class="colors" id="yellow" style="background-color: yellow;">Yellow</span>
+      <span class="colors" id="red" style="background-color: red;">Red</span>
+      <span class="colors" id="blue" style="background-color: blue;">Blue</span>
+      <span class="colors" id="orange" style="background-color: orange;">Orange</span>
+    </div>
+  </section>
+  <script>
+    const b=document.querySelector(".colors")
+    console.log(b)
+    
+</script>
+</body>
+
+</html>
