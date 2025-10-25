@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        h1{
+            margin:50px;
+        }
+        button{
+            background-color: red;
+            color:white;
+            margin: 50px;
+            padding:50px;
+            font-size: 20px;
+            border:1px solid black;
+            border-radius:5px;
+            width:300px;
+            
+        }
+        button:hover{
+            background-color: rgb(174, 19, 19);
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body class="body">
+<div class="head"> <h1>Welcome to Color picker</h1></div>
+
+<div class="buttons">
+    <button onclick="changecolor()">Change Background Color</button>
+</div>
+</body>
+<script>
+    function changecolor()
+    {
+        min=1
+        max=255
+
+        r=Math.random()*(max - min) + min;
+        g=Math.random()*(max - min) + min;
+        b=Math.random()*(max - min) + min;
+    document.body.style.backgroundColor=`rgb(${r}, ${g}, ${b})`
+    
+    
+
+    }
+</script>
+</html>
