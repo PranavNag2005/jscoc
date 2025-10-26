@@ -77,8 +77,26 @@
     </div>
   </section>
   <script>
-    const b=document.querySelector(".colors")
+    const b=document.querySelectorAll(".colors")
     console.log(b)
+    
+  b.forEach((item) => {
+    item.addEventListener("click", () => {
+      if (item.id === 'yellow') {
+        document.body.style.backgroundColor = item.id;
+      }
+      if (item.id === 'red') {
+        document.body.style.backgroundColor = item.id;
+      }
+      if (item.id === 'orange') {
+        document.body.style.backgroundColor = item.id;
+      }
+      if (item.id === 'blue') {
+        document.body.style.backgroundColor = item.id;
+      }
+    });
+  });
+
     
 </script>
 </body>
