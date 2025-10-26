@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: antiquewhite;
+      display: flex;
+    }
+
+    a {
+      text-decoration: none;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+    }
+
+    .forms{
+          display: flex;
+    flex-direction: column;
+    gap: 10px; /* adds space between label-input pairs */
+    max-width: 300px; /* optional: limits form width */
+    margin: 20px auto; /* optional: centers the form */
+
+
+    }
+    label{
+        font-weight: bold;
+        font-size:20px;
+    }
+    input{
+        padding:10px;
+        margin: 5px;
+        border: 1px solid red;
+        background-color: black;
+        color:white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px; /* space between color boxes */
+      margin-top: 30px;
+    }
+    #answer {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    text-align: center;
+}
+.bmi-ranges {
+  max-width: 300px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.bmi-ranges h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.bmi-ranges ul {
+  padding-left: 20px;
+}
+
+.bmi-ranges li {
+  margin-bottom: 8px;
+}
+button{
+    background-color: red;
+    color:white;
+    margin: 5px;
+    padding:10px;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 230px;
+    
+   
+
+}
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+button:hover{
+    background-color: rgb(226, 33, 33);
+    cursor:pointer;
+}
+  </style>
+</head>
+<body>
+   <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About us</a></li>
+      </ul>
+    </nav>
+  </header> 
+  
+    <form action="#" class="forms" method="post">
+        <h1>BMI CALCULATOR</h1>
+        <label for="weight">Weight in Kg: </label>
+        <input type="number" name="weight" id="weight" placeholder="e.g. 70">
+        <label for="height">Height in meters: </label>
+        <input type="number" name="height" id="height" placeholder="e.g. 1.75">
+
+        
+        </form>
+        <div id="answer"></div>
+       <div class="center-button">
+  <button type="button" onclick="calculate()">Calculate</button>
+</div>
+    
+  <section class="bmi-ranges">
+  <h2>BMI Categories</h2>
+  <ul>
+    <li><strong>Underweight:</strong> Less than 18.5</li>
+    <li><strong>Normal weight:</strong> 18.5 – 24.9</li>
+    <li><strong>Overweight:</strong> 25 – 29.9</li>
+    <li><strong>Obese:</strong> 30 and above</li>
+  </ul>
+</section>
+</body>
+<script>
+    function calculate(){
+        let weight = parseFloat(document.getElementById("weight").value);
+        let height = parseFloat(document.getElementById("height").value);
+
+        if (weight > 0 && height > 0) {
+          let bmi = weight / (height * height);
+          document.getElementById("answer").innerText = `Your BMI is ${bmi.toFixed(2)}`;
+        } else {
+          document.getElementById("answer").innerText = "Please enter valid weight and height.";
+        }
+
+    }
+    
+    
+</script>
+</html>
