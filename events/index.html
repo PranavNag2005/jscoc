@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Learning</title>
+</head>
+<body style="background-color: #414141;">
+    <h2>Adding Images</h2>
+    <div class="images">
+        <ul id="image">
+            <li><img width="100px"id="first" src="https://images.pexels.com/photos/34114827/pexels-photo-34114827.jpeg"></li>
+            <li><img width="100px"id="second" src="https://images.pexels.com/photos/27799203/pexels-photo-27799203.jpeg"></li>
+            <li><img width="100px"id="third" src="https://images.pexels.com/photos/34203370/pexels-photo-34203370.jpeg"></li>
+            <li><img width="100px"id="four" src="https://images.pexels.com/photos/34308384/pexels-photo-34308384.jpeg"></li>
+        </ul>
+
+
+    </div>
+</body>
+<script>
+    //adding events
+    // document.getElementById("third").onclick=function click(){
+    //     alert("i clicked third photo")
+    // }
+
+    //using addeventlistener
+    // document.getElementById("third").addEventListener('click', function (){
+    //     alert("clicked using eventlisteners")
+    // })
+
+    // understanding addeventlistener working
+    document.getElementById("third").addEventListener('click',function(e){
+        console.log(e);
+        
+    },false)
+
+    // what we need to learn about events
+    //types, timestamp,defaultprevented
+    //target, toelement, SrcElement,curreentTarget
+    // clientx,clienty,screenX,ScreenY
+    //altkey, ctrlkey,shiftkkey, keycode
+</script>
+</html>
