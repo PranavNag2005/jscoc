@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Hello Async Programming!!</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //setTimeout is builtin javascript function 
+    // used to execute task after particular time
+    //used to print only once
+
+    // This is one way implementing settimeout
+    // setTimeout(() => {
+    //     console.log("hello");
+        
+    // }, 1000);
+    //changeh1 is reference of the function to change h1 tag
+    const changeh1=function (){
+        document.querySelector("h1").innerHTML=`best javascript series`
+    }
+    //change referecne is holding the setimeout function using
+    // this reference we can cleartimeout 
+    const change=setTimeout(changeh1,2000)
+    document.getElementById("stop").addEventListener("click",function(){
+        console.log("inside ");
+        
+        clearTimeout(change)
+    })
+</script>
+</html>
