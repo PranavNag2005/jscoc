@@ -1,0 +1,4 @@
+javascript is synchronous and singled threaded that means executes the code
+line by line .
+js is slow 
+=>each operation waits to complete the last operation to start nextone
