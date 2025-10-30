@@ -64,3 +64,30 @@ promiseFour.then(function(user){
 })
 .finally(()=>{console.log("promise is either resolved or rejected");
 })
+// usage of async and await
+const promisefive=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        console.log("in promise five")
+        let error=true
+        if(!error){
+            resolve({name:"pranav",description:"In js promisefive"})
+        }
+        else{
+            reject("js went wrong")
+        }
+    },1000)
+})
+
+// usage of async block gives unhandled promise rejection so for that we should use try and catch blocks
+async function consumingpromisefive(){
+    try{
+    const response=await promisefive
+    console.log(response);}
+    catch(e){
+        console.log(e);
+        
+        
+    }
+    
+}
+consumingpromisefive()
