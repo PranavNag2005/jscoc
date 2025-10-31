@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input {
+      padding: 8px;
+      width: 60%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .delete-btn {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task..." />
+    <button id="submit">Add Task</button>
+
+    <table id="taskTable">
+      <thead>
+        <tr>
+          <th>Sl. No.</th>
+          <th>Task</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="insert"></tbody>
+    </table>
+  </div>
+
+  <script>
+    const submit = document.getElementById("submit");
+    let taskCount = 0;
+
+    submit.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const userinputvalue = document.getElementById("taskInput").value.trim();
+      if (userinputvalue === "") return;
+
+      taskCount++;
+
+      const parent = document.getElementById("insert");
+      const row = document.createElement("tr");
+
+      const slnoCell = document.createElement("td");
+      slnoCell.textContent = taskCount;
+
+      const taskCell = document.createElement("td");
+      taskCell.textContent = userinputvalue;
+
+      const actionCell = document.createElement("td");
+      const deletebutton = document.createElement("button");
+      deletebutton.textContent = "Delete";
+      deletebutton.className = "delete-btn";
+      deletebutton.addEventListener("click", function () {
+        parent.removeChild(row);
+        taskCount--;
+        renumberTasks();
+      });
+
+      actionCell.appendChild(deletebutton);
+      row.appendChild(slnoCell);
+      row.appendChild(taskCell);
+      row.appendChild(actionCell);
+      parent.appendChild(row);
+
+      document.getElementById("taskInput").value = "";
+    });
+
+    function renumberTasks() {
+      const rows = document.querySelectorAll("#insert tr");
+      rows.forEach((row, index) => {
+        row.children[0].textContent = index + 1;
+      });
+    }
+  </script>
+</body>
+</html>
