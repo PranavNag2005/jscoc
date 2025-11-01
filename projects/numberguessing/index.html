@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guess Game</title>
+    <style>
+        body{
+            background-color: rgb(127, 121, 121);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+      background-color: #faebd7;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    a {
+
+      text-decoration: none;
+      margin: 10px;
+      padding: 10px;
+      
+    }
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+    }
+    .game{
+        margin:100px auto;
+        display: flex;
+        width: 600px;
+        border: 2px solid red;
+        height:600px;
+        text-align: center;
+        flex-direction: column;
+        background-color: rgb(171, 154, 131);
+    }
+    #heading{
+        justify-content: center;
+        font-size: 20px;
+        margin-top: 1px;
+    }
+    .input-number{
+        width:150px;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+       
+        
+    }
+    #number{
+        padding:10px;
+        border:10px solid grey;
+        border-radius: 5px;
+    }
+    #btn{
+        width:150px;
+        height:50px;
+        border-radius: 5px;
+        background-color: green;
+        color: red;
+        font-size: 20px;
+        font-weight: bold;
+        
+
+    }
+    #btn:hover{
+        cursor:pointer;
+        background-color: rgb(147, 209, 147);
+    }
+    .a{
+        margin: 25px;
+
+    }
+    #error{
+        color:red;
+        font-size:18px;
+        font-weight:bold;
+    }
+    p{
+        font-size:18px;
+    }
+    #play-again{
+         width:150px;
+        height:50px;
+        border-radius: 5px;
+        background-color: green;
+        color: red;
+        font-size: 20px;
+        font-weight: bold;
+        
+    }
+    #play-again:hover{
+        background-color: rgb(87, 234, 87);
+        cursor:pointer;
+    }
+    </style>
+</head>
+<body>
+     <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About us</a></li>
+      </ul>
+    </nav>
+  </header> 
+  <main>
+    <section class="game">
+        <h1>Welcome to Number Guess Game</h1>
+        <p id="heading">Try guessing the number between 1 to 100</p>
+        <p id="heading">you have 10 attempts to guess the number </p>
+        <h2>Guess the Number</h2>
+        <form>
+            <div class="input-container">
+            <input type="text" name="number" id="number">
+        </div>
+        <div class="a"><button id="btn"  type="submit"> Submit Guess</button></div>
+        <button id="play-again" style="display: none;">Play Again</button>
+        </form>
+        <p id="error"></p>
+        <p id="pg">previous Guesses : </p>
+        
+        <p id="remain">Remaining Guesses : <span id="rg">10</span></p>
+    </section>
+  </main>
+</body>
+<script src="logic.js"></script>
+</html>

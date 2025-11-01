@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval</title>
+</head>
+<body>
+    <h1>Welcome to Hackx</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <p id="output"></p>
+</body>
+<script>
+    // this function is used to run every time after 1sec
+    // continously
+    //one way of doing
+    // setInterval(function (){
+    //     console.log("how are you ",Date.now());
+        
+    // },1000);
+    // using variable to store references
+    const settinginterval=function(){
+        // console.log("hello how are you",Date.now());
+        document.querySelector("#output").innerHTML+=`hello how are you ${new Date().toLocaleTimeString()} <br>`;
+
+        
+    }
+    let fixinterval
+    document.querySelector("#start").addEventListener('click',function (){
+         fixinterval=setInterval(settinginterval,1000)
+    })
+    document.querySelector("#stop").addEventListener('click',function(){
+        clearInterval(fixinterval)
+    })
+</script>
+</html>

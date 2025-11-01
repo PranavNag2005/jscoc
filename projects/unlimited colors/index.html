@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        h1{
+            margin:50px;
+        }
+        .buttons{
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+           justify-content: space-around;
+            display: flex;
+            margin-top: 30px;
+                
+            
+
+        }
+        button{
+            background-color: red;
+            color: white;
+            margin: 20px;
+            padding: 20px;
+            font-size: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 300px;
+            display:flex;
+            flex-direction: column;
+
+            
+        }
+        button:hover{
+            background-color: rgb(174, 19, 19);
+            cursor:pointer;
+        }
+        .head{
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="body" style="background-color: #414141;">
+<div class="head"> <h1 style="color:aquamarine">Welcome to Unlimited Colors</h1>
+<p style="color:azure">just Click on Start and enjoy Untill stop it!!!!</p></div>
+
+<div class="buttons">
+    <button id="start">Start Unlimited colors</button>
+    <button id="stop">Stop</button>
+</div>
+</body>
+<script>
+    const color=function changecolor()
+    {
+        let min=1
+        let max=255
+
+        let r=Math.random()*(max - min) + min;
+        let g=Math.random()*(max - min) + min;
+        let b=Math.random()*(max - min) + min;
+    document.body.style.backgroundColor=`rgb(${r}, ${g}, ${b})`
+    }
+    let settinginterval=null
+    document.getElementById("start").addEventListener('click',function(){
+    if(!settinginterval){
+    document.getElementById("start").textContent="Started..."
+    settinginterval=setInterval(color,1000)}
+    })
+    
+    // clearing the interval
+    document.getElementById("stop").addEventListener('click',function(){
+        clearInterval(settinginterval)
+        settinginterval=null
+        document.getElementById("start").textContent="Start Unlimited colors"
+    })
+    
+</script>
+</html>
